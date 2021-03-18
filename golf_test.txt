@@ -1,0 +1,4 @@
+Outlook;Temp.;Humidity;Wind;Decision
+Rain;Mild;Normal;Weak;Yes
+Overcast;Cool;Normal;Strong;Yes
+Sunny;Hot;High;Weak;No
