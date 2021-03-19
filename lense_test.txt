@@ -1,0 +1,3 @@
+NO;Age;spectacle-prescrip;astigmatism;tear-prod-rate;contact-lenses
+t1;young;hypermetrope;yes;reduced;none
+t2;pre-presbyopic;myope;no;reduced;none

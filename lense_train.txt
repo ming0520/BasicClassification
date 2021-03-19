@@ -1,0 +1,16 @@
+NO;Age;spectacle-prescrip;astigmatism;tear-prod-rate;contact-lenses
+1;young;myope;no;reduced;none
+2;young;myope;no;normal;soft
+3;young;myope;yes;reduced;none
+4;young;hypermetrope;no;reduced;none
+5;young;hypermetrope;no;normal;soft
+6;young;myope;yes;normal;hard
+7;pre-presbyopic;myope;yes;reduced;none
+8;pre-presbyopic;myope;yes;normal;hard
+9;pre-presbyopic;hypermetrope;yes;normal;none
+10;pre-presbyopic;hypermetrope;no;normal;soft
+11;prebyopic;myope;no;normal;none
+12;prebyopic;myope;yes;reduced;none
+13;prebyopic;myope;yes;normal;hard
+14;prebyopic;hypermetrope;no;reduced;none
+15;prebyopic;hypermetrope;no;normal;soft
