@@ -34,3 +34,4 @@ file/View.py
 file/View.spec
 main.py.spec
 main.spec
+*.exe
