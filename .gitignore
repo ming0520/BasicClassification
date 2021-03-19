@@ -32,3 +32,5 @@ file/student_test.txt
 file/student_train.txt
 file/View.py
 file/View.spec
+main.py.spec
+main.spec
