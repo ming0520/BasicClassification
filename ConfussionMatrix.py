@@ -82,7 +82,7 @@ class ConfussionMatrix:
         print('%7d' %self.support)
     def display_matrix(self):
         print(f'TP = {self.tp} FP = {self.fp}')
-        print(f'FN = {self.fn} TP = {self.tn}')
+        print(f'FN = {self.fn} TN = {self.tn}')
 
 class Report:
     def __init__(self):

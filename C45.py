@@ -263,9 +263,9 @@ class C45:
     def predict_file(self,file):
         label_name,number_of_entries,dataset,features = self.read_testset(file)
         predictions = []
-#         print(f'Number of entries: {number_of_entries}')
-#         print(f'Label: {label_name}')
-#         print(f'Features: {features}')
+        print(f'Number of entries: {number_of_entries}')
+        print(f'Label: {label_name}')
+        print(f'Features: {features}')
         for index in dataset.index:
             data = dataset.loc[index]
             label = self.get_label(data)
