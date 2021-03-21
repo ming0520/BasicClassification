@@ -24,13 +24,9 @@ file/build/View/Tree-02.toc
 file/build/View/View.exe.manifest
 file/build/View/warn-View.txt
 file/build/View/xref-View.html
-file/C45.py
-file/ConfussionMatrix.py
 file/dist/View.exe
-file/NaiveBayesian.py
 file/student_test.txt
 file/student_train.txt
-file/View.py
 file/View.spec
 main.py.spec
 main.spec
