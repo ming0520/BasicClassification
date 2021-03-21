@@ -281,7 +281,12 @@ class C45:
         df['Predictions'] = predictions
         df[dataset.columns[0]]=dataset[dataset.columns[0]]
         df[self.label_name]=dataset[self.label_name]
-        print(df)
+        self.print_full(df)
+
+    def print_full(self,x):
+        pd.set_option('display.max_rows', len(x))
+        print(x)
+        pd.reset_option('display.max_rows')
 
     def display_tree(self):
         for pre,_,node in RenderTree(self.tree,DoubleStyle):
