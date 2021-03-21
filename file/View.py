@@ -11,7 +11,7 @@ def stop_working():
 
 def get_file():
     while True:
-        print('Enter file name (.txt): or (no)')
+        print('Enter file name or (no)')
         try:
             filename = str(input())
         except:
@@ -63,7 +63,9 @@ def create_model_question():
             print('Invalid choice!')    
     print('============================================')
 
-def call_c45(train):
+def call_c45():
+    print('Please enter your TRAINING file (.txt)')
+    train = get_file()
     model = C45()
     model.read_csv(train)
     model.remove_feature(model.df.columns[0])
@@ -71,7 +73,7 @@ def call_c45(train):
     create_model_question()
     model.create_tree()
     model.display_tree()
-    print('Please enter your TESTING file')
+    print('Please enter your TESTING file (.txt)')
     test = get_file()
     predictions,dataset = model.predict_file(test)
     model.display_predictions(predictions,dataset)
@@ -79,39 +81,57 @@ def call_c45(train):
     create_report(model,predictions,dataset)
 
 
-def call_naive(train):
-    model = NaiveBayesian(verbose=False)
-    model.read_csv(train)
-    model.remove_feature(model.df.columns[0])
-    model.info()
-    create_model_question()
-    model.create_model()
-    print(model.get_model())
+def call_naive():
+    model = NaiveBayesian(verbose=True)
+    print('Naive Bayesian')
+    print('1) Train model')
+    print('2) Load model')
+    isBreak = False
     while True:
-        print('Enter name to save prior probability (.csv) or (no): ')
-        try:
-            input_name = str(input())
-        except:
-            continue
-        
-        if(input_name == 'no'):
+        if(isBreak):
             break
+        choice = int(input())
+        if (choice == 1):
+            print('Please enter your TRAINING file (.txt)')
+            train = get_file()
+            model.read_csv(train)
+            model.remove_feature(model.df.columns[0])
+            model.info()
+            create_model_question()
+            model.create_model()
+            model.get_model()
+            # print(model.get_model())
+            while True:
+                print('Enter name to save prior probability (.csv) or (no): ')
+                input_name = str(input())
+                
+                if(input_name == 'no'):
+                    isBreak = True
+                    break
 
-        if (not os.path.exists(input_name)):
-            model.save(input_name)
+                if (not os.path.exists(input_name)):
+                    isBreak = True
+                    model.save(input_name)
+                    break
+                else:
+                    print('File exits!')
+                    continue
+        elif(choice == 2):
+            label:test_naive
+            print('Please enter model file (.csv):')
+            filename = get_file()
+            df = model.load(filename)
+            model.isLoad = True
             break
         else:
-            print('File exits!')
-    print('Please enter your TESTING file')
+            print('Invalid choice!')    
+    print('Please enter your TESTING file (.txt)')
     test = get_file()
     predictions,dataset = model.predict_file(test,verbose=True)
     create_report(model,predictions,dataset)
 
 def main():
-    print('Please enter your training file')
-    train = get_file()
-
-    print('Select a method to analyze the frequent pattern')
+    print('Select a model')
     print('1) C4.5')
     print('2) Naive Bayesian')
 
@@ -124,9 +144,9 @@ def main():
             print('Invalid choice!')
 
     if(choice == 1):
-        call_c45(train)
+        call_c45()
     elif(choice == 2):
-        call_naive(train)
+        call_naive()
     else:
         print('Invalid choice! Exit program')
 
