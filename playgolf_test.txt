@@ -1,0 +1,5 @@
+RID;Outlook;Temp;Humidity;Windy;Play_Golf
+1;Rainy;Hot;High;FALSE;No
+2;Rainy;Hot;High;TRUE;No
+5;Sunny;Cool;Normal;FALSE;Yes
+14;Sunny;Mild;High;TRUE;No
